@@ -1,20 +1,19 @@
-const Contact = require('../models/contact');
+const { createContact } = require('../services/contactService');
 
 const submitContact = async (req, res) => {
     try {
-    const { name, email, message } = req.body;
+        const { name, email, message } = req.body;
 
-    if (!name || !email || !message) {
-        return res.status(400).json({ error: 'Todos los campos son obligatorios' });
-    }
+        if (!name || !email || !message) {
+            return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+        }
 
-    const newContact = new Contact({ name, email, message });
-    await newContact.save();
+        await createContact({ name, email, message });
 
-    res.status(201).json({ message: 'Mensaje recibido con éxito' });
+        res.status(201).json({ message: 'Mensaje recibido con éxito' });
     } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error del servidor' });
+        console.error(error);
+        res.status(500).json({ error: 'Error del servidor' });
     }
 };
 
