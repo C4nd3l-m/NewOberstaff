@@ -3,17 +3,22 @@ import { IContactForm } from "@/interfaces/IContactForm";
 
 export const postForm = async (formData: IContactForm) => {
   try {
-    const data = await fetch(`${API_URL}/contact`, {
+    const response = await fetch(`${API_URL}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({
+        name: formData.nombre,     
+        email: formData.email,
+        phone: formData.telefono,
+        message: formData.comentarios,
+      }),
     });
 
-    return data;
+    return response;
   } catch (error) {
-    console.error("Error", error);
+    console.error("Error al enviar:", error);
     return null;
   }
 };
