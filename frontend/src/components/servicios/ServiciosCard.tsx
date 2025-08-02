@@ -7,8 +7,9 @@ import {
   Megaphone,
   FileText,
 } from "lucide-react";
+import React from "react";
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, React.ReactNode> = {
   "Gestión de Redes": <Settings size={24} className="text-brand-pink" />,
   "Diseño Gráfico": <PenTool size={24} className="text-brand-pink" />,
   "Estrategia Comercial": <BarChart2 size={24} className="text-brand-pink" />,
