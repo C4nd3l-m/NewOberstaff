@@ -13,7 +13,7 @@ connectDB();
 const contactRoutes = require('./routes/contactRoutes'); 
 app.use('/api', contactRoutes); 
 
-app.get('/', (req, res) => {
+app.post('/contact', (req, res) => {
   res.send('API funcionando');
 });
 

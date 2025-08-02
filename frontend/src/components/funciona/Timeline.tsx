@@ -1,0 +1,27 @@
+import { pasos } from "@/helpers/pasos";
+
+const Timeline = () => {
+    return (
+        <section className="w-full py-10 px-4 bg-brand-dark text-black font-sans">
+            <h2 className="text-3xl font-display text-center mb-10 text-brand-light">¿Cómo Funciona?</h2>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 max-w-5xl mx-auto">
+                {pasos.map((paso, index) => (
+            <div key={paso.id} className="relative group flex flex-col items-center text-center max-w-xs">
+                <div className="bg-brand-accent p-4 rounded-full text-black mb-4">
+                    {paso.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{paso.title}</h3>
+                <p className="text-sm text-brand-gray group-hover:opacity-100 opacity-70 transition-opacity">
+                    {paso.description}
+                </p>
+                {index < pasos.length - 1 && (
+                <div className="hidden md:block absolute top-6 right-[-60px] w-10 border-t-2 border-brand-secondary" />
+                )}
+            </div>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+export default Timeline;

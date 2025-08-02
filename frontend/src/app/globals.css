@@ -13,14 +13,22 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+:root {
+  --brand-pink: #f472b6;
+  --brand-dark: #1f1f1f;
+  --brand-light: #f9fafb;
+  --brand-accent: #7c3aed;
+  --brand-secondary: #e0e7ff;
+  --brand-gray: #6b7280;
+  --brand-bgLight: #fff5f8;
+
+  --background: var(--brand-bgLight);
+}
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
