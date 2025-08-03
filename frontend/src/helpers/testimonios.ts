@@ -1,7 +1,7 @@
 export const videos = [
     {
         src: "/videos/fernando",
-        nombre:"",
+        nombre:"Fernando Calderon",
         puesto:"CEO de www.bybeautypro.com",
         description: "Estaba en busca de un editor de video para mi empresa y después de varias búsquedas sin éxito, encontré a Oberstaff en Instagram. Desde nuestra primera llamada, su profesionalismo y calidad de trabajo me dejaron impresionado. Ahora, gracias a su excelente servicio, he expandido mi contrato con ellos para incluir más personal."
     },

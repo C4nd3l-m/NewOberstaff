@@ -3,7 +3,8 @@
 import { postForm } from "@/actions/postForm";
 import { IContactForm } from "@/interfaces/IContactForm";
 import { useState } from "react";
-import toast from "react-hot-toast";
+import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 const FormContacto = () => {
   const [formData, setFormData] = useState<IContactForm>({
@@ -48,84 +49,82 @@ const FormContacto = () => {
     const loadingToast = toast.loading("Enviando formulario...");
     try {
       const response = await postForm(formData);
+      toast.dismiss(loadingToast);
       if (response?.ok) {
-        toast.success("¡Formulario enviado con éxito!", { id: loadingToast });
+        toast.success("¡Formulario enviado con éxito!");
         setFormData({ nombre: "", email: "", telefono: "", comentarios: "" });
       } else {
-        toast.error("Error al enviar el formulario", { id: loadingToast });
+        toast.error("Error al enviar el formulario");
       }
     } catch (error) {
-      toast.error("Ocurrió un error inesperado", { id: loadingToast });
+      toast.dismiss(loadingToast);
+      toast.error("Ocurrió un error inesperado");
     }
   };
 
   return (
-    <form
-  onSubmit={handleSubmit}
-  className="max-w-md w-full mx-auto space-y-4 p-5 bg-brand-dark rounded-2xl shadow-lg text-black bg-pink-400"
->
-  <h2 className="text-xl font-display text-white text-center">Contáctanos</h2>
+    <motion.form
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      onSubmit={handleSubmit}
+      className="max-w-md w-full mx-auto space-y-4 p-5 bg-brand-dark rounded-2xl shadow-lg text-black bg-pink-400"
+    >
+      {["nombre", "email", "telefono", "comentarios"].map((campo, idx) => (
+        <motion.div
+          key={campo}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 * idx }}
+          className="flex flex-col"
+        >
+          <label className="text-white text-sm mb-1 font-medium">
+            {campo === "nombre"
+              ? "Nombre y apellido"
+              : campo === "email"
+              ? "Email"
+              : campo === "telefono"
+              ? "Teléfono"
+              : "Comentarios"}
+          </label>
 
-  <div className="flex flex-col">
-    <label className="text-white text-sm mb-1 font-medium">Nombre y apellido</label>
-    <input
-      title="nombre"
-      name="nombre"
-      value={formData.nombre}
-      onChange={handleChange}
-      type="text"
-      className="p-2.5 rounded-xl bg-brand-pink/20 text-white placeholder:text-brand-gray border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition"
-      placeholder="Tu nombre completo"
-    />
-  </div>
+          {campo === "comentarios" ? (
+            <textarea
+              name={campo}
+              value={formData[campo as keyof IContactForm]}
+              onChange={handleChange}
+              rows={3}
+              className="p-2.5 rounded-xl bg-pink-300/20 text-white placeholder:text-brand-gray resize-none border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition hover:scale-[1.01] duration-150"
+              placeholder="Escribe aquí tus comentarios..."
+            />
+          ) : (
+            <input
+              name={campo}
+              value={formData[campo as keyof IContactForm]}
+              onChange={handleChange}
+              type={campo === "email" ? "email" : "text"}
+              className="p-2.5 rounded-xl bg-pink-300/20 text-white placeholder:text-brand-gray border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition hover:scale-[1.01] duration-150"
+              placeholder={
+                campo === "telefono"
+                  ? "Ej: +54 9 11 1234-5678"
+                  : campo === "email"
+                  ? "tu@email.com"
+                  : "Tu nombre completo"
+              }
+            />
+          )}
+        </motion.div>
+      ))}
 
-  <div className="flex flex-col">
-    <label className="text-white text-sm mb-1 font-medium">Email</label>
-    <input
-      title="email"
-      name="email"
-      value={formData.email}
-      onChange={handleChange}
-      type="email"
-      className="p-2.5 rounded-xl bg-brand-pink/20 text-white placeholder:text-brand-gray border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition"
-      placeholder="tu@email.com"
-    />
-  </div>
-
-  <div className="flex flex-col">
-    <label className="text-white text-sm mb-1 font-medium">Teléfono</label>
-    <input
-      title="telefono"
-      name="telefono"
-      value={formData.telefono}
-      onChange={handleChange}
-      type="text"
-      className="p-2.5 rounded-xl bg-brand-pink/20 text-white placeholder:text-brand-gray border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition"
-      placeholder="Ej: +54 9 11 1234-5678"
-    />
-  </div>
-
-  <div className="flex flex-col">
-    <label className="text-white text-sm mb-1 font-medium">Comentarios</label>
-    <textarea
-      title="comentarios"
-      name="comentarios"
-      value={formData.comentarios}
-      onChange={handleChange}
-      rows={3}
-      className="p-2.5 rounded-xl bg-brand-pink/20 text-white placeholder:text-brand-gray resize-none border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition"
-      placeholder="Escribe aquí tus comentarios..."
-    />
-  </div>
-
-  <button
-    type="submit"
-    className="w-full py-2.5 rounded-xl bg-brand-pink text-white font-semibold hover:bg-pink-500 transition"
-  >
-    Enviar
-  </button>
-</form>
-
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.98 }}
+        type="submit"
+        className="w-full py-2.5 rounded-xl bg-brand-pink text-white font-semibold hover:bg-pink-500 transition"
+      >
+        Enviar
+      </motion.button>
+    </motion.form>
   );
 };
 

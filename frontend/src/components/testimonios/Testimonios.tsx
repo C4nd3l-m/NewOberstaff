@@ -1,13 +1,19 @@
 import CardTestimonio from "./CardTestimonio";
 
 const Testimonios = () => {
-    return (
-        <div>
-            <h1>Casos de éxito</h1>
-            <p>En Oberstaff creemos que nuestros resultados hablan mucho más que las palabras ¿Quieres ser parte de la lista de clientes satisfechos con nuestro servicio?</p>
-            <CardTestimonio/>
-        </div>
-    )
-}
+  return (
+    <section className="text-center ">
+      <h2 className="text-4xl md:text-5xl font-display font-bold text-black tracking-tight">
+        Casos de éxito
+      </h2>
+      <p className="text-lg md:text-xl text-brand-dark font-sans leading-relaxed">
+        En Oberstaff creemos que nuestros resultados hablan más que las palabras.  
+        <br />
+        ¿Querés ser parte de la lista de clientes satisfechos con nuestro servicio?
+      </p>
+      <CardTestimonio />
+    </section>
+  );
+};
 
 export default Testimonios;

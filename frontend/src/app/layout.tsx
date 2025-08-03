@@ -3,8 +3,8 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Toaster } from "react-hot-toast";
 import FaqBot from "@/components/Faqbot";
+import { Toaster } from 'sonner';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${inter.variable} ${poppins.variable} antialiased font-sans`}
       >
         <Navbar/>
-        <Toaster position="top-right" />
+        <Toaster richColors position="top-center" />
         <FaqBot/>
         {children}
         <Footer/>
