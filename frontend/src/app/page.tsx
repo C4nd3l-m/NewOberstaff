@@ -4,6 +4,7 @@ import Servicios from "@/components/servicios/Servicios";
 import Testimonios from "@/components/testimonios/Testimonios";
 import FormContacto from "@/components/FormContacto";
 import ButtonAgenda from "@/components/ButtonAgenda";
+import FormModal from "@/components/ui/FormularioEnModal";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       70% en comparación con la contratación tradicional. 🎯 Más de 5000
       empresas ya confían en nosotros.
     </p>
+    <ButtonAgenda/>
   </div>
 
   <div className="flex-1 max-w-xl rounded-xl overflow-hidden shadow-lg border border-brand-secondary">
@@ -67,14 +69,17 @@ export default function Home() {
 
       <section id="areas-servicio" className="py-24">
         <Servicios />
+        <FormModal/>
       </section>
 
       <section id="testimonios" className="py-24">
         <Testimonios />
+        <FormModal/>
       </section>
 
       <section id="contacto" className="py-24 max-w-3xl mx-auto px-6">
         <FormContacto />
+        <FormModal/>
       </section>
     </main>
   );

@@ -12,7 +12,7 @@ export default function Footer() {
     const oneplanet = "/oneplanet.png";
 
     return (
-        <footer className="w-full bg-brand-dark text-white py-10 mt-16 font-sans">
+        <footer className="w-full bg-brand-dark text-black py-10 mt-16 font-sans">
             <div className="max-w-6xl mx-auto px-4 flex flex-col items-center gap-6">
             <div className="flex items-center gap-6">
                 <Image
@@ -37,28 +37,28 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaLinkedin className="text-2xl hover:text-brand-pink transition" />
+                <FaLinkedin className="text-2xl hover:text-black transition" />
             </Link>
             <Link
                 href="https://www.instagram.com/oberstaff"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaInstagram className="text-2xl hover:text-brand-pink transition" />
+                <FaInstagram className="text-2xl hover:text-black transition" />
             </Link>
             <Link
                 href="https://www.facebook.com/oberstaff/?locale=hi_IN"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-            <FaFacebook className="text-2xl hover:text-brand-pink transition" />
+            <FaFacebook className="text-2xl hover:text-black transition" />
             </Link>
             <Link
                 href="https://www.tiktok.com/@oberstaff"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-            <FaTiktok className="text-2xl hover:text-brand-pink transition" />
+            <FaTiktok className="text-2xl hover:text-black transition" />
             </Link>
         </div>
 
@@ -71,11 +71,11 @@ export default function Footer() {
             >
                 Privacy Policy and Use of Cookies
             </Link>
-            <p className="text-gray-300">
+            <p className="text-black">
                 © {new Date().getFullYear()} Oberstaff. Todos los derechos
                 reservados.
             </p>
-            <p className="text-gray-400">
+            <p className="text-black">
                 Comprometidos con la calidad y la excelencia en el servicio.
             </p>
             </div>
