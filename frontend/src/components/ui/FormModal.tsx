@@ -11,7 +11,7 @@ const FormModal = () => {
         <>
             <button
                 onClick={() => setIsOpen(true)}
-                className="flex items-center gap-2 px-4 py-2 text-sm md:text-base bg-pink-400 text-white font-semibold rounded-xl hover:bg-brand-accent transition shadow"
+                className="flex items-center gap-2 px-4 py-2 text-sm md:text-base bg-pink-400 text-white font-semibold rounded-xl transition shadow"
             >
                 <Mail size={18} />
                 Contáctanos

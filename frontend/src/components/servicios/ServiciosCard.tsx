@@ -12,12 +12,12 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 
 const iconMap: Record<string, React.ReactNode> = {
-  "Gestión de Redes": <Settings size={24} className="text-brand-pink" />,
-  "Diseño Gráfico": <PenTool size={24} className="text-brand-pink" />,
-  "Estrategia Comercial": <BarChart2 size={24} className="text-brand-pink" />,
-  "Soporte Ejecutivo": <UserCheck size={24} className="text-brand-pink" />,
-  "Marketing Digital": <Megaphone size={24} className="text-brand-pink" />,
-  "Redacción Profesional": <FileText size={24} className="text-brand-pink" />,
+  "Gestión de Redes": <Settings size={24}/>,
+  "Diseño Gráfico": <PenTool size={24}/>,
+  "Estrategia Comercial": <BarChart2 size={24}/>,
+  "Soporte Ejecutivo": <UserCheck size={24} />,
+  "Marketing Digital": <Megaphone size={24} />,
+  "Redacción Profesional": <FileText size={24} />,
 };
 
 const cardVariants: Variants = {
@@ -39,7 +39,7 @@ const ServiciosCard = () => {
       {servicios.map((ser, i) => (
         <motion.div
           key={ser.id}
-          className="relative bg-brand-dark bg-opacity-90 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-[1.03] cursor-pointer"
+          className="relative bg-opacity-90 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-[1.03] cursor-pointer"
           custom={i}
           variants={cardVariants}
           initial="hidden"
@@ -54,7 +54,7 @@ const ServiciosCard = () => {
               </span>
             </div>
 
-            <h3 className="text-xl font-display font-bold mb-4 text-brand-light leading-snug">
+            <h3 className="text-xl font-display font-bold mb-4 leading-snug">
               {ser.descripcion}
             </h3>
 
@@ -62,7 +62,7 @@ const ServiciosCard = () => {
               {[ser.punto1, ser.punto2, ser.punto3].map((punto, i) => (
                 <li
                   key={i}
-                  className="text-sm text-brand-gray font-sans flex items-center gap-2"
+                  className="text-sm font-sans flex items-center gap-2"
                 >
                   <span className="inline-block w-2 h-2 rounded-full bg-pink-400 mt-1" />
                   {punto}

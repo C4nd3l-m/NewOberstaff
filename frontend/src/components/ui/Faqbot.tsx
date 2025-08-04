@@ -31,7 +31,7 @@ export default function FaqBot() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 30 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="w-96 bg-white text-brand-dark rounded-3xl shadow-lg border border-brand-gray p-6 space-y-4"
+            className="w-96 bg-white rounded-3xl shadow-lg border p-6 space-y-4"
           >
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-display text-xl font-semibold">Preguntas Frecuentes</h2>
@@ -49,7 +49,7 @@ export default function FaqBot() {
                 <div key={i}>
                   <button
                     onClick={() => setSelected(selected === i ? null : i)}
-                    className="w-full text-left font-semibold text-base text-brand-dark hover:text-pink-300 transition duration-200"
+                    className="w-full text-left text-base hover:text-pink-300 transition duration-200"
                   >
                     {faq.question}
                   </button>
@@ -61,13 +61,13 @@ export default function FaqBot() {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="mt-2 text-base text-brand-gray leading-relaxed overflow-hidden"
+                        className="mt-2 text-base leading-relaxed overflow-hidden"
                       >
                         {faq.answer}
                       </motion.p>
                     )}
                   </AnimatePresence>
-                  <hr className="my-3 border-brand-gray/30" />
+                  <hr className="my-3" />
                 </div>
               ))}
             </div>
@@ -81,7 +81,7 @@ export default function FaqBot() {
             transition={{ duration: 0.2 }}
             title="Abrir FAQ"
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-2 bg-pink-400 text-black px-4 py-3 rounded-full shadow-lg hover:bg-brand-accent transition font-medium"
+            className="flex items-center gap-2 bg-pink-400 text-black px-4 py-3 rounded-full shadow-lg transition font-medium"
             aria-label="Abrir FAQ"
           >
             <MessageCircle className="w-6 h-6" />

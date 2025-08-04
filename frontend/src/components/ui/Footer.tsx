@@ -12,7 +12,7 @@ export default function Footer() {
     const oneplanet = "/oneplanet.png";
 
     return (
-        <footer className="w-full bg-brand-dark text-black py-10 mt-16 font-sans">
+        <footer className="w-full text-black py-10 mt-16 font-sans">
             <div className="max-w-6xl mx-auto px-4 flex flex-col items-center gap-6">
             <div className="flex items-center gap-6">
                 <Image

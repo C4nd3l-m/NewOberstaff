@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FaqBot from "@/components/Faqbot";
+import Navbar from "@/components/ui/Navbar";
+import Footer from "@/components/ui/Footer";
+import FaqBot from "@/components/ui/Faqbot";
 import { Toaster } from "sonner";
 
 const inter = Inter({

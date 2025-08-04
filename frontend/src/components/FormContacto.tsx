@@ -68,7 +68,7 @@ const FormContacto = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       onSubmit={handleSubmit}
-      className="max-w-md w-full mx-auto space-y-4 p-5 bg-brand-dark rounded-2xl shadow-lg text-black bg-pink-400"
+      className="max-w-md w-full mx-auto space-y-4 p-5 rounded-2xl shadow-lg text-black bg-pink-400"
     >
       {["nombre", "email", "telefono", "comentarios"].map((campo, idx) => (
         <motion.div
@@ -94,7 +94,7 @@ const FormContacto = () => {
               value={formData[campo as keyof IContactForm]}
               onChange={handleChange}
               rows={3}
-              className="p-2.5 rounded-xl bg-pink-300/20 text-white placeholder:text-brand-gray resize-none border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition hover:scale-[1.01] duration-150"
+              className="p-2.5 rounded-xl bg-pink-300/20 text-white placeholder resize-none border border-brand-secondary/40 focus:outline-none focus:ring-2 transition hover:scale-[1.01] duration-150"
               placeholder="Escribe aquí tus comentarios..."
             />
           ) : (
@@ -103,7 +103,7 @@ const FormContacto = () => {
               value={formData[campo as keyof IContactForm]}
               onChange={handleChange}
               type={campo === "email" ? "email" : "text"}
-              className="p-2.5 rounded-xl bg-pink-300/20 text-white placeholder:text-brand-gray border border-brand-secondary/40 focus:outline-none focus:ring-2 focus:ring-brand-pink transition hover:scale-[1.01] duration-150"
+              className="p-2.5 rounded-xl bg-pink-300/20 text-white border focus:outline-none focus:ring-2 transition hover:scale-[1.01] duration-150"
               placeholder={
                 campo === "telefono"
                   ? "Ej: +54 9 11 1234-5678"
@@ -120,7 +120,7 @@ const FormContacto = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.98 }}
         type="submit"
-        className="w-full py-2.5 rounded-xl bg-brand-pink text-white font-semibold hover:bg-pink-500 transition"
+        className="w-full py-2.5 rounded-xl text-white font-semibold hover:bg-pink-500 transition"
       >
         Enviar
       </motion.button>

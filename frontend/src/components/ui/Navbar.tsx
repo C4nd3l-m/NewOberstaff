@@ -12,7 +12,7 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="fixed top-0 left-0 w-full z-50 bg-brand-dark shadow-lg border-b border-brand-pink/30 backdrop-blur-md"
+            className="fixed top-0 left-0 w-full z-50  shadow-lg border-b border-pink-400/30 backdrop-blur-md"
         >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-12 py-4">
             <Link href="#inicio" className="flex items-center">
@@ -27,7 +27,7 @@ export default function Navbar() {
                 />
             </Link>
 
-        <ul className="hidden md:flex gap-8 font-sans text-sm text-brand-light tracking-wide">
+        <ul className="hidden md:flex gap-8 font-sans text-sm tracking-wide">
             {[
                 { href: "#que-es", label: "¿Qué es Oberstaff?" },
                 { href: "#por-que", label: "¿Por qué elegirnos?" },
@@ -39,7 +39,7 @@ export default function Navbar() {
             <li key={href}>
                 <a
                     href={href}
-                    className="hover:text-brand-pink transition-colors duration-300"
+                    className="hover:text-pink-300 transition-colors duration-300"
                 >
                     {label}
                 </a>
@@ -47,10 +47,10 @@ export default function Navbar() {
             ))}
         </ul>
 
-        <div className="hidden md:flex gap-6 font-sans text-sm text-brand-gray tracking-wide">
+        <div className="hidden md:flex gap-6 font-sans text-sm tracking-wide">
             <Link
                 href="https://oberstaff.com/blog/"
-                className="hover:text-brand-pink transition-colors duration-300"
+                className="hover:text-pink-500 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
             >
@@ -58,7 +58,7 @@ export default function Navbar() {
             </Link>
             <Link
                 href="https://oberstaff.zohorecruit.com/jobs/Careers"
-                className="hover:text-brand-pink transition-colors duration-300"
+                className="hover:text-pink-400 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
             >

@@ -25,7 +25,7 @@ const HeroSection = () => {
         </motion.div>
 
         <motion.div
-            className="flex-1 max-w-xl rounded-xl overflow-hidden shadow-lg border border-brand-secondary"
+            className="flex-1 max-w-xl rounded-xl overflow-hidden shadow-lg"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}

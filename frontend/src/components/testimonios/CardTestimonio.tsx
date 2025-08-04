@@ -91,8 +91,8 @@ const CardTestimonio = () => {
                     {video.nombre}
                 </h3>
             )}
-            <p className="text-sm text-brand-gray italic">{video.puesto}</p>
-            <p className="text-sm text-brand-gray mt-2">{video.description}</p>
+            <p className="text-sm italic">{video.puesto}</p>
+            <p className="text-sm mt-2">{video.description}</p>
             </div>
         </motion.div>
         ))}

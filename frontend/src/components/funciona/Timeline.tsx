@@ -17,9 +17,9 @@ const fadeInUp: Variants = {
 
 const Timeline = () => {
     return (
-        <section className="w-full py-10 px-4 bg-brand-dark text-black font-sans">
+        <section className="w-full py-10 px-4 text-black font-sans">
             <motion.h2
-                    className="text-3xl font-display text-center mb-10 text-brand-light"
+                    className="text-3xl font-display text-center mb-10"
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -39,11 +39,11 @@ const Timeline = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-            <div className="bg-brand-accent p-4 rounded-full text-black mb-4">
+            <div className=" p-4 rounded-full text-black mb-4">
                 {paso.icon}
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-brand-light">{paso.title}</h3>
-            <p className="text-sm text-brand-gray group-hover:opacity-100 opacity-70 transition-opacity">
+            <h3 className="text-xl font-semibold mb-2">{paso.title}</h3>
+            <p className="text-sm group-hover:opacity-100 opacity-70 transition-opacity">
                 {paso.description}
             </p>
             {index < pasos.length - 1 && (
