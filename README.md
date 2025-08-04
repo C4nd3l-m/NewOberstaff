@@ -57,12 +57,15 @@ Abrir en el navegador: http://localhost:3000
 Backend (.env):
 
 PORT=4000
-MONGO_URI=mongodb+srv://usuario:contraseña@cluster.mongodb.net/oberstaff
+MONGO_URI=mongodb+srv://usuario:contraseña@cluster.mongodb.net/oberstaff 
+```
+----
 
 🧪 Buenas prácticas
 Código organizado por responsabilidades.
 
 Validaciones robustas de datos y errores.
+
 Tipado estricto con TypeScript.
 
 👩‍💻 Autor
@@ -73,6 +76,3 @@ Frontend & Fullstack Developer
 📄 Licencia
 Este proyecto fue desarrollado con fines evaluativos y educativos.
 Todos los derechos sobre el contenido original de Oberstaff pertenecen a su respectiva empresa.
-
-
-
