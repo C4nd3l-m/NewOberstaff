@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FaqBot from "@/components/Faqbot";
-import { Toaster } from 'sonner';
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +22,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Oberstaff - Talento de Sudamérica para tu empresa",
   description: "Talento de Sudamerica para tu empresa",
+  icons: {
+    icon: "/NewOberstaff.png", 
+  },
 };
 
 export default function RootLayout({
@@ -32,14 +35,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        
         className={`${inter.variable} ${poppins.variable} antialiased font-sans`}
       >
-        <Navbar/>
+        <Navbar />
         <Toaster richColors position="top-center" />
-        <FaqBot/>
+        <FaqBot />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
