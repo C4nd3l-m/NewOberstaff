@@ -9,7 +9,7 @@ Rediseño completo del sitio oberstaff.com con tecnologías modernas. Esta soluc
 
 🎨 Tailwind CSS – Estilado rápido y moderno mediante clases utilitarias.
 
-📝 React Hook Form + Zod – Validación eficiente y controlada de formularios.
+📝 Validación manual en frontend y con express-validator en backend
 
 📦 React Icons – Iconografía SVG personalizable.
 
@@ -23,13 +23,12 @@ Rediseño completo del sitio oberstaff.com con tecnologías modernas. Esta soluc
 🔐 Dotenv – Manejo seguro de variables de entorno.
 
 ✨ Funcionalidades principales
+
 ✅ Rediseño visual con enfoque moderno y profesional.
 
 ✅ Diseño 100% responsive adaptable a todos los dispositivos.
 
 ✅ Formulario de contacto funcional con:
-
-Validaciones frontend (Zod + React Hook Form).
 
 Validaciones backend (middleware de Express).
 
